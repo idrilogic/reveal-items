@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show-slide</title>
+	<style>
+		img {
+			width: 70%;
+			border: 4px solid steelblue;
+			padding: 2px;
+		}
+
+		.center {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 5%;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="center">
+		<img name="slide">
+	</div>
+	
+
+	<script>
+		var i = 0; // start point
+		var images = [];
+		var time = 3000;
+
+
+		// images source
+		images[0] = "image1.jpg";
+		images[1] = "image2.jpg";
+		images[2] = "image3.jpg";
+		images[3] = "image4.jpg";
+
+
+		// change images
+		function changeImg() {
+			document.slide.src = images[i];
+
+			if (i < images.length - 1) {
+				i++;
+			} else {
+				i = 0;
+			}
+
+			setTimeout('changeImg()', time)
+		}
+
+		window.onload = changeImg;
+	</script>
+
+</body>
+</html>
